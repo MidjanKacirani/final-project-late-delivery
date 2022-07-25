@@ -1,4 +1,4 @@
-package com.example.final_project.enums;
+package com.example.final_project.course.enums;
 
 public enum ROLES {
 

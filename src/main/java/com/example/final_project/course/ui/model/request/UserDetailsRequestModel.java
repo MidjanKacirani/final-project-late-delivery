@@ -1,12 +1,14 @@
-package com.example.final_project.model.request;
+package com.example.final_project.course.ui.model.request;
 
-import com.example.final_project.enums.ROLES;
+import com.example.final_project.course.enums.ROLES;
 
 public class UserDetailsRequestModel {
 
     private String email;
     private String password;
     private ROLES user_Role;
+    private String name;
+    private String surname;
 
     public String getEmail() {
         return email;
@@ -30,5 +32,21 @@ public class UserDetailsRequestModel {
 
     public void setUser_Role(ROLES user_Role) {
         this.user_Role = user_Role;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }
