@@ -26,6 +26,9 @@ public class UserDetails {
     @Column(name = "phone_number", nullable = false, unique = true)
     private String phoneNumber;
 
+    @Column(name = "is_visible", nullable = false)
+    private Boolean is_visible;
+
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;

@@ -1,6 +1,7 @@
 package com.example.final_project.work.bl.model.entity.user;
 
 import com.example.final_project.work.bl.model.enums.ROLES;
+import jdk.jfr.BooleanFlag;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -24,6 +25,9 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     @Column(name = "role", nullable = false)
     private ROLES role;
+
+    @Column(name = "is_visible", nullable = false)
+    private Boolean is_visible;
 
     @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
     private UserDetails userDetails;
@@ -72,4 +76,11 @@ public class User {
         this.userDetails = userDetails;
     }
 
+    public Boolean getIs_visible() {
+        return is_visible;
+    }
+
+    public void setIs_visible(Boolean is_visible) {
+        this.is_visible = is_visible;
+    }
 }

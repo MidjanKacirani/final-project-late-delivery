@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -19,7 +19,10 @@ public class Order {
     @Column(name="order_name", nullable = false)
     private String orderName;
 
-    @OneToOne(mappedBy = "order", fetch = FetchType.EAGER)
+    @Column(name = "is_visible", nullable = false)
+    private Boolean is_visible;
+
+    @OneToOne(mappedBy = "orders", fetch = FetchType.EAGER)
     private OrderDetails orderDetails;
 
     @ManyToOne(fetch = FetchType.EAGER)

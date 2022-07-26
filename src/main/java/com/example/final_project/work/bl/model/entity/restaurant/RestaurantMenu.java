@@ -15,6 +15,9 @@ public class RestaurantMenu {
     @Column(name = "menu_name", nullable = false, unique = true)
     private String name;
 
+    @Column(name = "is_visible", nullable = false)
+    private Boolean is_visible;
+
     @OneToOne(mappedBy = "restaurant_menu", fetch = FetchType.EAGER)
     private OrderDetails orderDetails;
 
