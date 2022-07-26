@@ -28,6 +28,7 @@ public class User {
     @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
     private UserDetails userDetails;
 
+
     //getters and setters
 
 
@@ -70,4 +71,5 @@ public class User {
     public void setUserDetails(UserDetails userDetails) {
         this.userDetails = userDetails;
     }
+
 }

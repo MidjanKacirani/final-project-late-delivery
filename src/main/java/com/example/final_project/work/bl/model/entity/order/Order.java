@@ -16,6 +16,9 @@ public class Order {
     @Column(name = "id", nullable = false, unique = true)
     private Long Id;
 
+    @Column(name="order_name", nullable = false)
+    private String orderName;
+
     @OneToOne(mappedBy = "order", fetch = FetchType.EAGER)
     private OrderDetails orderDetails;
 
@@ -64,4 +67,27 @@ public class Order {
         this.orderDetails = orderDetails;
     }
 
+    public String getOrderName() {
+        return orderName;
+    }
+
+    public void setOrderName(String orderName) {
+        this.orderName = orderName;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public UserDetails getUser_details() {
+        return user_details;
+    }
+
+    public void setUser_details(UserDetails user_details) {
+        this.user_details = user_details;
+    }
 }
