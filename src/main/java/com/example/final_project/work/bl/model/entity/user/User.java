@@ -2,6 +2,8 @@ package com.example.final_project.work.bl.model.entity.user;
 
 import com.example.final_project.work.bl.model.enums.ROLES;
 import jdk.jfr.BooleanFlag;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -18,7 +20,7 @@ public class User {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "password", nullable = false, unique = true)
+    @Column(name = "password", nullable = false)
     private String password;
 
 
@@ -27,7 +29,7 @@ public class User {
     private ROLES role;
 
     @Column(name = "is_visible", nullable = false)
-    private Boolean is_visible;
+    private Boolean is_visible = true;
 
     @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
     private UserDetails userDetails;
