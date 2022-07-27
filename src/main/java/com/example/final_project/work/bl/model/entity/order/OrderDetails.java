@@ -5,6 +5,7 @@ import com.example.final_project.work.bl.model.enums.STATUS;
 
 import javax.persistence.*;
 import javax.persistence.Id;
+import java.util.Date;
 
 
 @Entity
@@ -18,6 +19,9 @@ public class OrderDetails {
 
     @Column(name = "is_visible", nullable = false)
     private Boolean is_visible;
+
+    @Column(nullable = false)
+    private Date orderDate;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "order_id", referencedColumnName = "id")

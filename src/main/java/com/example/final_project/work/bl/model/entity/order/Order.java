@@ -26,12 +26,12 @@ public class Order {
     private OrderDetails orderDetails;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
-    private Restaurant restaurant;
-
-    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_details_id", referencedColumnName = "id")
     private UserDetails user_details;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
+    private Restaurant restaurant;
 
 
     //getters and setters

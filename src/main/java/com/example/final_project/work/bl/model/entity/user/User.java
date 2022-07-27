@@ -83,4 +83,5 @@ public class User {
     public void setIs_visible(Boolean is_visible) {
         this.is_visible = is_visible;
     }
+
 }
