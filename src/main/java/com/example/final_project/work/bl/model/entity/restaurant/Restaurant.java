@@ -24,6 +24,9 @@ public class Restaurant {
     @Column(name = "is_visible", nullable = false)
     private Boolean is_visible;
 
+    @Column(name = "manager_name", nullable = false)
+    private String managerName;
+
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER)
     private List<Order> restaurantOrders;
 
@@ -79,5 +82,13 @@ public class Restaurant {
 
     public void setIs_visible(Boolean is_visible) {
         this.is_visible = is_visible;
+    }
+
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
 }

@@ -63,4 +63,36 @@ public class OrderDetails {
     public void setStatus(STATUS status) {
         this.status = status;
     }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public Boolean getIs_visible() {
+        return is_visible;
+    }
+
+    public void setIs_visible(Boolean is_visible) {
+        this.is_visible = is_visible;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public RestaurantMenu getRestaurant_menu_id() {
+        return restaurant_menu_id;
+    }
+
+    public void setRestaurant_menu_id(RestaurantMenu restaurant_menu_id) {
+        this.restaurant_menu_id = restaurant_menu_id;
+    }
 }
