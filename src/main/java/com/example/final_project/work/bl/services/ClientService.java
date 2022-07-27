@@ -11,9 +11,9 @@ public interface ClientService {
 
     List<RestaurantMenu> retrieveAllActiveMenu();
 
-    Boolean order(RestaurantMenu restaurantMenu);
+    String order(RestaurantMenu restaurantMenu);
 
-    STATUS checkOrderStatus(OrderDetails id);
+    STATUS checkOrderStatus(Long Order_id);
 
     List<OrderDetails> seeAllMyOrders();
 

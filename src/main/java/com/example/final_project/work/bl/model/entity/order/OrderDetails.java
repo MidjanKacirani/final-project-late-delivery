@@ -11,6 +11,9 @@ import java.util.Date;
 @Entity
 @Table(name = "order_details")
 public class OrderDetails {
+    public OrderDetails(RestaurantMenu restaurant_menu) {
+        this.restaurant_menu = restaurant_menu;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +21,10 @@ public class OrderDetails {
     private Long Id;
 
     @Column(name = "is_visible", nullable = false)
-    private Boolean is_visible;
+    private Boolean is_visible=true;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIME)
     private Date orderDate;
 
     @OneToOne(fetch = FetchType.EAGER)
@@ -34,7 +38,7 @@ public class OrderDetails {
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private STATUS status;
+    private STATUS status = STATUS.CREATED;
 
     //getters and setters
 
