@@ -5,11 +5,13 @@ import com.example.final_project.work.bl.model.entity.user.User;
 import com.example.final_project.work.bl.repository.roles.adminRepo.RestaurantAdminRepository;
 import com.example.final_project.work.bl.repository.roles.adminRepo.UserAdminRepository;
 import com.example.final_project.work.bl.services.AdminService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AdminServiceImpl implements AdminService {
 
     private UserAdminRepository userAdminRepository;
@@ -23,12 +25,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public List<User> getAllUsers() {
         List<User> users = userAdminRepository.findAll();
-        List<User> usersReturned = new ArrayList<>();
-        users.forEach(item -> {
-            if(item.getIs_visible().equals(Boolean.TRUE))
-                usersReturned.add(item);
-        });
-        return usersReturned;
+        return users;
     }
 
     @Override
@@ -54,13 +51,7 @@ public class AdminServiceImpl implements AdminService {
     }
     @Override
     public List<Restaurant> getAllRestaurant() {
-        List<Restaurant> restaurants = restaurantAdminRepository.findAll();
-        List<Restaurant> restaurantsReturned = new ArrayList<>();
-        restaurants.forEach(item -> {
-            if(item.getIs_visible().equals(Boolean.TRUE))
-                restaurantsReturned.add(item);
-        });
-        return restaurantsReturned;
+        return restaurantAdminRepository.findAll();
     }
 
     @Override
