@@ -34,9 +34,9 @@ public class UserController {
      * @param userDetail
      */
     @PostMapping("/{id}")
-    public UserDetails storeUserDetail(@RequestBody UserDetails userDetail, @PathVariable("id") String id)
-    {
-        return userDetailService.storeUserDetails(userDetail);
+    public UserDetails storeUserDetail(@RequestBody UserDetails userDetail, @PathVariable(name = "id") Long id)
+        {
+        return userDetailService.storeUserDetails(userDetail, id);
     }
 
 }

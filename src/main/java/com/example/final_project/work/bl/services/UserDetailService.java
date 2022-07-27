@@ -4,6 +4,6 @@ import com.example.final_project.work.bl.model.entity.user.UserDetails;
 
 public interface UserDetailService {
 
-    UserDetails storeUserDetails(UserDetails userDetails);
+    UserDetails storeUserDetails(UserDetails userDetails, Long id);
 
 }

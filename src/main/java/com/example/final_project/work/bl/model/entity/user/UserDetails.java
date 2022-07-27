@@ -27,7 +27,7 @@ public class UserDetails {
     private String phoneNumber;
 
     @Column(name = "is_visible", nullable = false)
-    private Boolean is_visible;
+    private Boolean is_visible = true;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -85,5 +85,21 @@ public class UserDetails {
 
     public void setClient_orders(List<Order> client_orders) {
         this.client_orders = client_orders;
+    }
+
+    public Boolean getIs_visible() {
+        return is_visible;
+    }
+
+    public void setIs_visible(Boolean is_visible) {
+        this.is_visible = is_visible;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
