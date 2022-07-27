@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.sql.Time;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "restaurant_menu")
@@ -28,13 +29,11 @@ public class RestaurantMenu {
     @Column(name = "closing_hour", nullable = false)
     private Time closing;
 
-    @Column
-
     @OneToOne(mappedBy = "restaurant_menu", fetch = FetchType.EAGER)
     private OrderDetails orderDetails;
 
     @OneToMany(mappedBy = "restaurant_menu", fetch = FetchType.EAGER)
-    private List<RestaurantMenuItem> restaurantMenuItemList;
+    private Set<RestaurantMenuItem> restaurantMenuItemSet;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
@@ -105,5 +104,13 @@ public class RestaurantMenu {
 
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public Set<RestaurantMenuItem> getRestaurantMenuItemSet() {
+        return restaurantMenuItemSet;
+    }
+
+    public void setRestaurantMenuItemSet(Set<RestaurantMenuItem> restaurantMenuItemSet) {
+        this.restaurantMenuItemSet = restaurantMenuItemSet;
     }
 }

@@ -25,11 +25,11 @@ public class OrderDetails {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "order_id", referencedColumnName = "id")
-    private Order order_id;
+    private Order orders;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "restaurant_menu_id", referencedColumnName = "Id")
-    private RestaurantMenu restaurant_menu_id;
+    private RestaurantMenu restaurant_menu;
 
 
     @Enumerated(value = EnumType.STRING)
@@ -40,19 +40,19 @@ public class OrderDetails {
 
 
     public RestaurantMenu getRestaurantMenu() {
-        return restaurant_menu_id;
+        return restaurant_menu;
     }
 
     public void setRestaurantMenu(RestaurantMenu restaurantMenu) {
-        this.restaurant_menu_id = restaurantMenu;
+        this.restaurant_menu = restaurantMenu;
     }
 
     public Order getOrder_id() {
-        return order_id;
+        return orders;
     }
 
     public void setOrder_id(Order order_id) {
-        this.order_id = order_id;
+        this.orders = order_id;
     }
 
 
@@ -88,11 +88,4 @@ public class OrderDetails {
         this.orderDate = orderDate;
     }
 
-    public RestaurantMenu getRestaurant_menu_id() {
-        return restaurant_menu_id;
-    }
-
-    public void setRestaurant_menu_id(RestaurantMenu restaurant_menu_id) {
-        this.restaurant_menu_id = restaurant_menu_id;
-    }
 }

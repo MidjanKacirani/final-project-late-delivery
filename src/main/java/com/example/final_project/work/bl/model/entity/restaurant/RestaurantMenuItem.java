@@ -22,7 +22,7 @@ public class RestaurantMenuItem {
             name = "restaurantMenu",
             referencedColumnName = "id"
     )
-    private RestaurantMenu restaurantMenu;
+    private RestaurantMenu restaurant_menu;
 
     public Long getId() {
         return Id;
@@ -49,10 +49,10 @@ public class RestaurantMenuItem {
     }
 
     public RestaurantMenu getRestaurantMenu() {
-        return restaurantMenu;
+        return restaurant_menu;
     }
 
     public void setRestaurantMenu(RestaurantMenu restaurantMenu) {
-        this.restaurantMenu = restaurantMenu;
+        this.restaurant_menu = restaurantMenu;
     }
 }

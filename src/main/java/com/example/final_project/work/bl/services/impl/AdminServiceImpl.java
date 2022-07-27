@@ -2,7 +2,7 @@ package com.example.final_project.work.bl.services.impl;
 
 import com.example.final_project.work.bl.model.entity.restaurant.Restaurant;
 import com.example.final_project.work.bl.model.entity.user.User;
-import com.example.final_project.work.bl.repository.roles.adminRepo.AdminRepository;
+import com.example.final_project.work.bl.repository.roles.adminRepo.UserAdminRepository;
 import com.example.final_project.work.bl.services.AdminService;
 
 import java.util.ArrayList;
@@ -11,10 +11,10 @@ import java.util.Optional;
 
 public class AdminServiceImpl implements AdminService {
 
-    private AdminRepository<User> userAdminRepository;
-    private AdminRepository<Restaurant> restaurantAdminRepository;
+    private UserAdminRepository<User> userAdminRepository;
+    private UserAdminRepository<Restaurant> restaurantAdminRepository;
 
-    public AdminServiceImpl(AdminRepository<User> userAdminRepository, AdminRepository<Restaurant> restaurantAdminRepository) {
+    public AdminServiceImpl(UserAdminRepository<User> userAdminRepository, UserAdminRepository<Restaurant> restaurantAdminRepository) {
         this.userAdminRepository = userAdminRepository;
         this.restaurantAdminRepository = restaurantAdminRepository;
     }
